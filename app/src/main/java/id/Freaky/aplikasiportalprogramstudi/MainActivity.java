@@ -3,6 +3,8 @@ package id.Freaky.aplikasiportalprogramstudi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,8 +15,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import id.Freaky.aplikasiportalprogramstudi.berita.BeritaFragment;
+
 public class MainActivity  extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    protected DrawerLayout mDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,20 @@ public class MainActivity  extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        if (savedInstanceState == null) {
+            Fragment fragment = null;
+            Class fragmentClass = null;
+            fragmentClass = BeritaFragment.class;
+            try {
+                fragment = (Fragment) fragmentClass.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+        }
     }
 
     @Override
@@ -77,8 +97,11 @@ public class MainActivity  extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Fragment fragment = null;
+        Class fragmentClass = null;
+
         if (id == R.id.nav_berita) {
-            // Handle the camera action
+            fragmentClass = BeritaFragment.class;
         } else if (id == R.id.nav_pengumuman) {
 
         } else if (id == R.id.nav_berkas) {
@@ -91,8 +114,8 @@ public class MainActivity  extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        mDrawer = findViewById(R.id.drawer_layout);
+        mDrawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }
