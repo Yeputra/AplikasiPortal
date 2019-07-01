@@ -52,7 +52,7 @@ public class MainActivity  extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main2, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -77,17 +77,17 @@ public class MainActivity  extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_berita) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_pengumuman) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_berkas) {
 
-        } else if (id == R.id.nav_tools) {
+        } else if (id == R.id.nav_kegiatan) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_blog) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_galeri) {
 
         }
 

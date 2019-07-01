@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group>
-        <item android:id="@+id/nav_item_one"
-            android:title="Item 1" />
-        <item android:id="@+id/nav_item_two"
-            android:title="Item 2" />
-        <item android:id="@+id/nav_item_three"
-            android:title="Item 3" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_berita"
+            android:icon="@drawable/ic_berita"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_pengumuman"
+            android:icon="@drawable/ic_pengumuman"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_berkas"
+            android:icon="@drawable/ic_berkas"
+            android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_kegiatan"
+            android:icon="@drawable/ic_kegiatan"
+            android:title="@string/menu_tools" />
+
+        <item
+            android:id="@+id/nav_blog"
+            android:icon="@drawable/ic_blog"
+            android:title="@string/menu_share" />
+        <item
+            android:id="@+id/nav_galeri"
+            android:icon="@drawable/ic_galeri"
+            android:title="@string/menu_send" />
     </group>
 
-    <group android:id="@+id/group_menu">
-        <item android:id="@+id/nav_item_four"
-            android:title="Item 4" />
-        <item android:id="@+id/nav_item_five"
-            android:title="Item 5" />
-    </group>
-
-    <item android:title="Title 1">
-        <menu>
-            <item android:id="@+id/nav_item_six"
-                android:title="Item 6" />
-            <item android:id="@+id/nav_item_seven"
-                android:title="Item 7" />
-        </menu>
-    </item>
 </menu>
