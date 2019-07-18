@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "884942530667",
+    "firebase_url": "https://aplikasiportal.firebaseio.com",
+    "project_id": "aplikasiportal",
+    "storage_bucket": "aplikasiportal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884942530667:android:3779bb0af396c6da",
+        "android_client_info": {
+          "package_name": "id.Freaky.aplikasiportalprogramstudi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884942530667-8snp0v4hecih01pu7cp8kfaggqc9977i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.Freaky.aplikasiportalprogramstudi",
+            "certificate_hash": "b7f1047024d8cf18ca88bd306004c955710a85ae"
+          }
+        },
+        {
+          "client_id": "884942530667-6hhh3dotnn89fmvr3cvdih9cl9hhoqlq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZciSbDztqRVO4IdaG7TxRLiqGPp6CQXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884942530667-6hhh3dotnn89fmvr3cvdih9cl9hhoqlq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
