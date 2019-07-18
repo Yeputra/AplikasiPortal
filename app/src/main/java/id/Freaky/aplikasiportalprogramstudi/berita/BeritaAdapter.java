@@ -5,7 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -39,6 +42,10 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyHolder> 
         holder.content.setText(mylist.getContent());
         holder.writer.setText(mylist.getWriter());
         holder.date.setText(mylist.getDate());
+        Glide.with(context)
+                .load(mylist.getImage())
+                .centerCrop()
+                .into(holder.image);
     }
 
     @Override
@@ -71,6 +78,7 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyHolder> 
 
     class MyHolder extends RecyclerView.ViewHolder{
         TextView title,content,writer,date;
+        ImageView image;
 
 
         public MyHolder(View itemView) {
@@ -78,8 +86,8 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyHolder> 
             title = (TextView) itemView.findViewById(R.id.judul_berita);
             content= (TextView) itemView.findViewById(R.id.isi_berita);
             writer= (TextView) itemView.findViewById(R.id.penulis_berita);
-            date= (TextView) itemView.findViewById(R.id.tanggal_berita);
-
+            date = (TextView) itemView.findViewById(R.id.tanggal_berita);
+            image = itemView.findViewById(R.id.iv_berita);
         }
     }
 }
