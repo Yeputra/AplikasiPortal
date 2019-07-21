@@ -1,17 +1,18 @@
 package id.Freaky.aplikasiportalprogramstudi.kegiatan;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
-
+import com.google.gson.GsonBuilder;
 import java.util.List;
-
+import id.Freaky.aplikasiportalprogramstudi.DetailActivity;
 import id.Freaky.aplikasiportalprogramstudi.R;
 import id.Freaky.aplikasiportalprogramstudi.model.KegiatanModel;
 
@@ -76,18 +77,34 @@ public class KegiatanAdapter extends RecyclerView.Adapter<KegiatanAdapter.MyHold
 
     }
 
-    class MyHolder extends RecyclerView.ViewHolder{
-        TextView title,content,writer,date;
+    class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+
+    {
+        TextView title, content, writer, date;
         ImageView image;
+        CardView cvBerita;
 
 
         public MyHolder(View itemView) {
             super(itemView);
-            title =  itemView.findViewById(R.id.judul_berita);
-            content= itemView.findViewById(R.id.isi_berita);
-            writer= itemView.findViewById(R.id.penulis_berita);
+            cvBerita = itemView.findViewById(R.id.cv_berita);
+            title = itemView.findViewById(R.id.judul_berita);
+            content = itemView.findViewById(R.id.isi_berita);
+            writer = itemView.findViewById(R.id.penulis_berita);
             date = itemView.findViewById(R.id.tanggal_berita);
             image = itemView.findViewById(R.id.iv_berita);
+
+            cvBerita.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            KegiatanModel data = list.get(position);
+            final Context context = v.getContext();
+            Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra("berita", new GsonBuilder().create().toJson(data));
+            context.startActivity(intent);
         }
     }
 }

@@ -1,5 +1,7 @@
 package id.Freaky.aplikasiportalprogramstudi;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -11,11 +13,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import id.Freaky.aplikasiportalprogramstudi.berita.BeritaFragment;
 import id.Freaky.aplikasiportalprogramstudi.blog.BlogFragment;
@@ -36,11 +36,19 @@ public class MainActivity  extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                Uri uri = Uri.parse("mailto:" + "pgpaud_tasik@upi.edu")
+                        .buildUpon()
+                        .appendQueryParameter("subject", "Subject")
+                        .appendQueryParameter("body", "")
+                        .build();
+                Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+                intent.setData(Uri.parse("mailto:pgpaud_tasik@upi.edu"));
+                startActivity(Intent.createChooser(intent, "Kirim Email"));
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
