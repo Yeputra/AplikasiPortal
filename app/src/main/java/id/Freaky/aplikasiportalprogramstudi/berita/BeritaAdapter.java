@@ -83,10 +83,10 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyHolder> 
 
         public MyHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.judul_berita);
-            content= (TextView) itemView.findViewById(R.id.isi_berita);
-            writer= (TextView) itemView.findViewById(R.id.penulis_berita);
-            date = (TextView) itemView.findViewById(R.id.tanggal_berita);
+            title =  itemView.findViewById(R.id.judul_berita);
+            content= itemView.findViewById(R.id.isi_berita);
+            writer= itemView.findViewById(R.id.penulis_berita);
+            date = itemView.findViewById(R.id.tanggal_berita);
             image = itemView.findViewById(R.id.iv_berita);
         }
     }
