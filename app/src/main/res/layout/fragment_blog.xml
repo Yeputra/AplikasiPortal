@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pengumuman.PengumumanFragment">
+    tools:context=".blog.BlogFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_pengumuman"
+        android:id="@+id/rv_blog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_pengumuman">
+        android:layout_margin="8dp"
+        tools:listitem="@layout/item_blog">
 
     </android.support.v7.widget.RecyclerView>
 

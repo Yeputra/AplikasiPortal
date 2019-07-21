@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
@@ -23,6 +23,7 @@
         android:textStyle="bold"
         android:text="21/07/2019"
         android:textColor="@android:color/holo_blue_light"
+        android:drawableLeft="@drawable/ic_calendar_with_a_clock_time_tools"
         android:layout_marginLeft="8dp"/>
 
     <View

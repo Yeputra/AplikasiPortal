@@ -11,16 +11,23 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import id.Freaky.aplikasiportalprogramstudi.berita.BeritaFragment;
+import id.Freaky.aplikasiportalprogramstudi.blog.BlogFragment;
+import id.Freaky.aplikasiportalprogramstudi.kegiatan.KegiatanFragment;
+import id.Freaky.aplikasiportalprogramstudi.pengumuman.PengumumanFragment;
 
 public class MainActivity  extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected DrawerLayout mDrawer;
+    Fragment fragment;
+    Class fragmentClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,19 +51,14 @@ public class MainActivity  extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        if (savedInstanceState == null) {
-            Fragment fragment = null;
-            Class fragmentClass = null;
             fragmentClass = BeritaFragment.class;
             try {
                 fragment = (Fragment) fragmentClass.newInstance();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
-        }
     }
 
     @Override
@@ -71,19 +73,14 @@ public class MainActivity  extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -97,19 +94,28 @@ public class MainActivity  extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        Fragment fragment = null;
-        Class fragmentClass = null;
-
         if (id == R.id.nav_berita) {
             fragmentClass = BeritaFragment.class;
+            fragment = new BeritaFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         } else if (id == R.id.nav_pengumuman) {
-
+            fragmentClass = PengumumanFragment.class;
+            fragment = new PengumumanFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         } else if (id == R.id.nav_berkas) {
 
         } else if (id == R.id.nav_kegiatan) {
-
+            fragmentClass = KegiatanFragment.class;
+            fragment = new KegiatanFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         } else if (id == R.id.nav_blog) {
-
+            fragmentClass = BlogFragment.class;
+            fragment = new BlogFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         } else if (id == R.id.nav_galeri) {
 
         }
@@ -118,4 +124,5 @@ public class MainActivity  extends AppCompatActivity
         mDrawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

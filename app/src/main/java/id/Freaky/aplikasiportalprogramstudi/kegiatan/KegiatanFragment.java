@@ -1,4 +1,4 @@
-package id.Freaky.aplikasiportalprogramstudi.pengumuman;
+package id.Freaky.aplikasiportalprogramstudi.kegiatan;
 
 
 import android.os.Bundle;
@@ -21,18 +21,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import id.Freaky.aplikasiportalprogramstudi.R;
-import id.Freaky.aplikasiportalprogramstudi.model.PengumumanModel;
+import id.Freaky.aplikasiportalprogramstudi.model.BeritaModel;
+import id.Freaky.aplikasiportalprogramstudi.model.KegiatanModel;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PengumumanFragment extends Fragment {
-    RecyclerView rvPengumuman;
+public class KegiatanFragment extends Fragment {
+
+    RecyclerView rvKegiatan;
     FirebaseDatabase database;
     DatabaseReference myRef ;
-    List<PengumumanModel> list;
+    List<KegiatanModel> list;
 
-    public PengumumanFragment() {
+    public KegiatanFragment() {
         // Required empty public constructor
     }
 
@@ -41,31 +43,38 @@ public class PengumumanFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_pengumuman, container, false);
-        rvPengumuman = rootView.findViewById(R.id.rv_pengumuman);
+        View rootView = inflater.inflate(R.layout.fragment_kegiatan, container, false);
+        // Inflate the layout for this fragment
+        rvKegiatan = rootView.findViewById(R.id.rv_kegiatan);
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference().child("Pengumuman");
+        myRef = database.getReference().child("Kegiatan");
         myRef.keepSynced(true);
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                list = new ArrayList<PengumumanModel>();
+                list = new ArrayList<KegiatanModel>();
 
                 for(DataSnapshot dataSnapshot1 :dataSnapshot.getChildren()){
-                    PengumumanModel value = dataSnapshot1.getValue(PengumumanModel.class);
-                    PengumumanModel fire = new PengumumanModel();
+                    BeritaModel value = dataSnapshot1.getValue(BeritaModel.class);
+                    KegiatanModel fire = new KegiatanModel();
                     String title = value.getTitle();
+                    String content = value.getContent();
+                    String writer = value.getWriter();
                     String date = value.getDate();
+                    String image = value.getImage();
                     fire.setTitle(title);
+                    fire.setContent(content);
+                    fire.setWriter(writer);
                     fire.setDate(date);
+                    fire.setImage(image);
                     list.add(fire);
 
-                    PengumumanAdapter adapter = new PengumumanAdapter(list,getActivity());
+                    KegiatanAdapter adapter = new KegiatanAdapter(list,getActivity());
                     RecyclerView.LayoutManager lm = new LinearLayoutManager(getActivity());
-                    rvPengumuman.setLayoutManager(lm);
-                    rvPengumuman.setItemAnimator( new DefaultItemAnimator());
-                    rvPengumuman.setAdapter(adapter);
+                    rvKegiatan.setLayoutManager(lm);
+                    rvKegiatan.setItemAnimator( new DefaultItemAnimator());
+                    rvKegiatan.setAdapter(adapter);
                 }
             }
 
@@ -74,6 +83,7 @@ public class PengumumanFragment extends Fragment {
                 Log.w("Hello", "Failed to read value.", databaseError.toException());
             }
         });
+
 
         return rootView;
     }
