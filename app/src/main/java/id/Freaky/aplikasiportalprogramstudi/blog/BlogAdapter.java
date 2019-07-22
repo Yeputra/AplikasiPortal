@@ -49,6 +49,7 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.MyHolder> {
         Glide.with(context)
                 .load(mylist.getImage())
                 .centerCrop()
+                .placeholder(R.drawable.tumbnail)
                 .into(holder.image);
     }
 

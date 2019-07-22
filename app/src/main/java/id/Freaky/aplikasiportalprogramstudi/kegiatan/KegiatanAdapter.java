@@ -46,6 +46,7 @@ public class KegiatanAdapter extends RecyclerView.Adapter<KegiatanAdapter.MyHold
         Glide.with(context)
                 .load(mylist.getImage())
                 .centerCrop()
+                .placeholder(R.drawable.tumbnail)
                 .into(holder.image);
     }
 

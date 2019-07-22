@@ -49,6 +49,7 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.MyHolder> 
         Glide.with(context)
                 .load(mylist.getImage())
                 .centerCrop()
+                .placeholder(R.drawable.tumbnail)
                 .into(holder.image);
     }
 

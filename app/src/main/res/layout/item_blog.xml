@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         card:cardElevation="4dp"
+        android:foreground="?attr/selectableItemBackground"
         card:cardCornerRadius="8dp">
         
         <LinearLayout

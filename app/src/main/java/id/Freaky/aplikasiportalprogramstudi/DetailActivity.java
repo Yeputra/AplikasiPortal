@@ -39,6 +39,7 @@ public class DetailActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(berita.getImage())
                 .centerCrop()
+                .placeholder(R.drawable.tumbnail)
                 .into(image);
     }
 }
