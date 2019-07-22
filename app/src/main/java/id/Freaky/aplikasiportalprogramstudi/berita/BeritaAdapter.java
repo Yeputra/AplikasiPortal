@@ -1,5 +1,9 @@
 package id.Freaky.aplikasiportalprogramstudi.berita;
 
+/**
+ * Created by Yuda Eka Putra
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;

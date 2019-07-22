@@ -1,5 +1,9 @@
 package id.Freaky.aplikasiportalprogramstudi.berkas;
 
+/**
+ * Created by Yuda Eka Putra
+ */
+
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;

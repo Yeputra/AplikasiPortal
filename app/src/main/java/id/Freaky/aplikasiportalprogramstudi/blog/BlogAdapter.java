@@ -1,5 +1,9 @@
 package id.Freaky.aplikasiportalprogramstudi.blog;
 
+/**
+ * Created by Andre Perdiana
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;

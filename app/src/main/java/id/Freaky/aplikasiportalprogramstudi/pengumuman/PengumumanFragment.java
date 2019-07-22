@@ -1,5 +1,8 @@
 package id.Freaky.aplikasiportalprogramstudi.pengumuman;
 
+/**
+ * Created by Dalih Rusmana
+ */
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

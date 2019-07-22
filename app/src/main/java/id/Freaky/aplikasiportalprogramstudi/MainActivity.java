@@ -1,10 +1,13 @@
 package id.Freaky.aplikasiportalprogramstudi;
 
+/**
+ * Created by Yuda Eka Putra
+ */
+
 import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -21,7 +24,6 @@ import id.Freaky.aplikasiportalprogramstudi.berita.BeritaFragment;
 import id.Freaky.aplikasiportalprogramstudi.berkas.BerkasFragment;
 import id.Freaky.aplikasiportalprogramstudi.blog.BlogFragment;
 import id.Freaky.aplikasiportalprogramstudi.kegiatan.KegiatanFragment;
-import id.Freaky.aplikasiportalprogramstudi.model.BlogModel;
 import id.Freaky.aplikasiportalprogramstudi.pengumuman.PengumumanFragment;
 
 public class MainActivity  extends AppCompatActivity

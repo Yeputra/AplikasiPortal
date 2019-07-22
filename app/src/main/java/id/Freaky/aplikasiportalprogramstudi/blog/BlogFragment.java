@@ -1,5 +1,8 @@
 package id.Freaky.aplikasiportalprogramstudi.blog;
 
+/**
+ * Created by Andre Perdiana
+ */
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
