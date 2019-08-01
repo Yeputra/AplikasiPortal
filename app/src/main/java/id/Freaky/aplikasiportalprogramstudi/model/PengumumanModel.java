@@ -28,6 +28,15 @@ public class PengumumanModel {
     public String title;
     public String date;
     public String file;
+    public String no;
+
+    public String getNo() {
+        return no;
+    }
+
+    public void setNo(String no) {
+        this.no = no;
+    }
 
     public String getUrl() {
         return url;

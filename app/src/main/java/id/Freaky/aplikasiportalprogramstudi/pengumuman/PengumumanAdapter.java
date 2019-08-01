@@ -45,7 +45,7 @@ public class PengumumanAdapter extends RecyclerView.Adapter<PengumumanAdapter.My
         final PengumumanModel mylist = list.get(position);
         holder.title.setText(mylist.getTitle());
         holder.date.setText(mylist.getDate());
-
+        holder.no.setText(mylist.getNo());
         holder.ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +96,7 @@ public class PengumumanAdapter extends RecyclerView.Adapter<PengumumanAdapter.My
     }
 
     class MyHolder extends RecyclerView.ViewHolder{
-        TextView title,date;
+        TextView title,date, no;
         LinearLayout ll;
 
 
@@ -104,6 +104,7 @@ public class PengumumanAdapter extends RecyclerView.Adapter<PengumumanAdapter.My
             super(itemView);
             title =  itemView.findViewById(R.id.tv_title_pengumuman);
             date = itemView.findViewById(R.id.tv_tanggal_pengumuman);
+            no = itemView.findViewById(R.id.tv_no);
             ll = itemView.findViewById(R.id.ll_pengumuman);
         }
     }

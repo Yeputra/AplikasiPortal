@@ -61,9 +61,11 @@ public class PengumumanFragment extends Fragment {
                     String title = value.getTitle();
                     String date = value.getDate();
                     String url = value.getUrl();
+                    String no = value.getNo();
                     fire.setTitle(title);
                     fire.setDate(date);
                     fire.setUrl(url);
+                    fire.setNo(no);
                     list.add(fire);
 
                     PengumumanAdapter adapter = new PengumumanAdapter(list,getActivity());
