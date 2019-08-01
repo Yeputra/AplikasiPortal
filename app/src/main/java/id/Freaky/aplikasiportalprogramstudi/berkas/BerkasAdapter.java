@@ -61,7 +61,6 @@ public class BerkasAdapter extends RecyclerView.Adapter<BerkasAdapter.MyHolder> 
 
     public long downloadFile(Context context, String fileName, String fileExtension, String destinationDirectory, String url) {
 
-
         DownloadManager downloadmanager = (DownloadManager) context.
                 getSystemService(Context.DOWNLOAD_SERVICE);
         Uri uri = Uri.parse(url);

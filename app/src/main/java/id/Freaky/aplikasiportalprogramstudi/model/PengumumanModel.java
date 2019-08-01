@@ -28,4 +28,14 @@ public class PengumumanModel {
     public String title;
     public String date;
     public String file;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String url;
 }
