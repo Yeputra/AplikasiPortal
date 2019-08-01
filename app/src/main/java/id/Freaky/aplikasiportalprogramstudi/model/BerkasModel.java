@@ -47,6 +47,16 @@ public class BerkasModel {
     public String date;
     public String image;
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String url;
+
     public boolean isBtnShow() {
         return btnShow;
     }

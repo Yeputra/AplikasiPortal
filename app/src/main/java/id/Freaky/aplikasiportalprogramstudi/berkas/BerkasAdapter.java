@@ -4,7 +4,10 @@ package id.Freaky.aplikasiportalprogramstudi.berkas;
  * Created by Yuda Eka Putra
  */
 
+import android.app.DownloadManager;
 import android.content.Context;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -38,7 +41,7 @@ public class BerkasAdapter extends RecyclerView.Adapter<BerkasAdapter.MyHolder> 
 
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
-        BerkasModel mylist = list.get(position);
+        final BerkasModel mylist = list.get(position);
         holder.title.setText(mylist.getTitle());
         holder.content.setText(mylist.getContent());
         holder.date.setText(mylist.getDate());
@@ -47,6 +50,27 @@ public class BerkasAdapter extends RecyclerView.Adapter<BerkasAdapter.MyHolder> 
         // Change the state
         mylist.setBtnShow(!expanded);
 
+        holder.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                downloadFile(context, mylist.getTitle(),"pdf", Environment.DIRECTORY_DOWNLOADS,mylist.getUrl());
+            }
+        });
+
+    }
+
+    public long downloadFile(Context context, String fileName, String fileExtension, String destinationDirectory, String url) {
+
+
+        DownloadManager downloadmanager = (DownloadManager) context.
+                getSystemService(Context.DOWNLOAD_SERVICE);
+        Uri uri = Uri.parse(url);
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName + fileExtension);
+
+        return downloadmanager.enqueue(request);
     }
 
     @Override

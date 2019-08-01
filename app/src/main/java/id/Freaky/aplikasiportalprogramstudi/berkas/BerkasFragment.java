@@ -66,11 +66,13 @@ public class BerkasFragment extends Fragment {
                     String writer = value.getWriter();
                     String date = value.getDate();
                     String image = value.getImage();
+                    String url = value.getUrl();
                     fire.setTitle(title);
                     fire.setContent(content);
                     fire.setWriter(writer);
                     fire.setDate(date);
                     fire.setImage(image);
+                    fire.setUrl(url);
                     list.add(fire);
 
                     BerkasAdapter adapter = new BerkasAdapter(list,getActivity());
