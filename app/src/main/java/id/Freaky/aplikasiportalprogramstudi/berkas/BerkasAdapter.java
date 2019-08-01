@@ -53,7 +53,7 @@ public class BerkasAdapter extends RecyclerView.Adapter<BerkasAdapter.MyHolder> 
         holder.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                downloadFile(context, mylist.getTitle(),"pdf", Environment.DIRECTORY_DOWNLOADS,mylist.getUrl());
+                downloadFile(context, mylist.getTitle(),".pdf", Environment.DIRECTORY_DOWNLOADS,mylist.getUrl());
             }
         });
 
