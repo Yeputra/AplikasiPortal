@@ -23,6 +23,7 @@ import android.view.View;
 import id.Freaky.aplikasiportalprogramstudi.berita.BeritaFragment;
 import id.Freaky.aplikasiportalprogramstudi.berkas.BerkasFragment;
 import id.Freaky.aplikasiportalprogramstudi.blog.BlogFragment;
+import id.Freaky.aplikasiportalprogramstudi.galeri.GaleriFragment;
 import id.Freaky.aplikasiportalprogramstudi.kegiatan.KegiatanFragment;
 import id.Freaky.aplikasiportalprogramstudi.pengumuman.PengumumanFragment;
 
@@ -138,7 +139,11 @@ public class MainActivity  extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
             toolbar.setTitle("Blog");
         } else if (id == R.id.nav_galeri) {
-
+            fragmentClass = GaleriFragment.class;
+            fragment = new GaleriFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+            toolbar.setTitle("Galeri");
         }
 
         mDrawer = findViewById(R.id.drawer_layout);

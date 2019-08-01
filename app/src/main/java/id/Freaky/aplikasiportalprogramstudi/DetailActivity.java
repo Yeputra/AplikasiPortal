@@ -6,7 +6,8 @@ package id.Freaky.aplikasiportalprogramstudi;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +21,7 @@ public class DetailActivity extends AppCompatActivity {
     private BeritaModel berita;
     TextView title, content, writer, date;
     ImageView image;
-    CardView cvBerita;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,14 @@ public class DetailActivity extends AppCompatActivity {
         writer = findViewById(R.id.penulis);
         date = findViewById(R.id.tanggal);
         image = findViewById(R.id.iv_gambar);
+        back = findViewById(R.id.iv_back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         berita = new GsonBuilder().create().fromJson(this.getIntent().getStringExtra("berita"), BeritaModel.class);
 
