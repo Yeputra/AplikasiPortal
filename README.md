@@ -1,5 +1,5 @@
 # AplikasiPortal
-This repository is my final project for "Tugas Pemrograman Android" Lecture. The reference source of this project can be found at http://pgpaud-tasikmalaya.upi.edu/
+This repository is my final project for "Tugas Proyek Pemrograman Android" Lecture. The reference source of this project can be found at http://pgpaud-tasikmalaya.upi.edu/
 
 
 ## Screenshots
