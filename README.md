@@ -3,7 +3,9 @@ This repository is my final project for "Tugas Pemrograman Android" Lecture. The
 
 
 ## Screenshots
-
+<img src="https://github.com/Yeputra/AplikasiPortal/blob/master/screenshot/Screen%20Shot%202019-08-12%20at%2016.54.47.png" width="250"> &nbsp; 
+<img src="https://github.com/Yeputra/AplikasiPortal/blob/master/screenshot/Screen%20Shot%202019-08-12%20at%2016.55.00.png" width="250">  &nbsp; 
+<img src="https://github.com/Yeputra/AplikasiPortal/blob/master/screenshot/Screen%20Shot%202019-08-12%20at%2016.55.34.png" width="250">
 
 ## Features
 * Berita
