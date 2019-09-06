@@ -10,7 +10,7 @@ This repository is my final project for "Tugas Proyek Pemrograman Android" Lectu
 ## Features
 * Berita
 * Pengumuman (File Download)
-* Berita (File Download)
+* Berkas (File Download)
 * Kegiatan
 * Blog
 * Galeri
